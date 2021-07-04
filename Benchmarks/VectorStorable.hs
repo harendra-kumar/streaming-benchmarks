@@ -7,7 +7,12 @@
 
 {-# LANGUAGE CPP #-}
 {-# LANGUAGE ScopedTypeVariables #-}
+{-# LANGUAGE TemplateHaskell #-}
 
 module Benchmarks.VectorStorable where
 
+import Benchmarks.DefaultMain (defaultMain)
 #include "VectorCommon.hs"
+
+main :: P.IO ()
+main = $(defaultMain "VectorStorable")
